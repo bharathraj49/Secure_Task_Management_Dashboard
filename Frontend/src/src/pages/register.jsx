@@ -2,6 +2,7 @@ import { useState } from 'react';
 import api from '../api/axios';
 import { useNavigate, Link } from 'react-router-dom';
 import React from 'react';
+import { UserPlus, Mail, Lock, Briefcase, ChevronRight } from 'lucide-react';
 
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '', profession: '' });
@@ -20,65 +21,97 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 font-sans">
-      <div className="w-full max-w-md p-10 bg-gray-900/90 backdrop-blur-md rounded-3xl shadow-2xl border border-white/20">
-        <div className="text-center mb-6">
-          <h1 className="text-4xl font-extrabold text-white drop-shadow-lg">Secure Task Management</h1>
-          <p className="text-gray-300 mt-2">Register to securely manage your tasks</p>
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 font-sans">
+      <div className="w-full max-w-md">
+        {/* LOGO AREA */}
+        <div className="flex justify-center items-center gap-2 mb-8">
+          <div className="bg-indigo-600 p-2 rounded-lg text-white">
+            <UserPlus size={24} />
+          </div>
+          <span className="text-2xl font-bold tracking-tight text-slate-900">Taskly</span>
         </div>
 
-        <form className="space-y-5" onSubmit={handleSubmit}>
-          <input
-            name="name"
-            placeholder="Full Name"
-            value={form.name}
-            onChange={handleChange}
-            required
-            className="w-full px-5 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition"
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={handleChange}
-            required
-            className="w-full px-5 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition"
-          />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handleChange}
-            required
-            className="w-full px-5 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition"
-          />
-          <input
-            name="profession"
-            placeholder="Profession"
-            value={form.profession}
-            onChange={handleChange}
-            className="w-full px-5 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition"
-          />
+        <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
+          <div className="mb-8">
+            <h1 className="text-2xl font-bold text-slate-900">Create account</h1>
+            <p className="text-slate-500 text-sm mt-1">Start managing your workflow effectively today.</p>
+          </div>
 
-          <button
-            type="submit"
-            className="w-full py-3 font-semibold rounded-xl bg-gradient-to-r from-pink-500 via-purple-600 to-blue-500 text-white shadow-lg shadow-pink-500/50 hover:shadow-xl transform hover:-translate-y-1 transition-all"
-          >
-            Register
-          </button>
-        </form>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div className="relative">
+              <UserTypeIcon icon={<UserPlus size={18} />} />
+              <input
+                name="name"
+                placeholder="Full Name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+              />
+            </div>
 
-        <p className="mt-6 text-center text-gray-300">
-          Already have an account?{' '}
-          <Link className="text-pink-400 font-semibold hover:underline" to="/login">
-            Login
-          </Link>
-        </p>
+            <div className="relative">
+              <UserTypeIcon icon={<Mail size={18} />} />
+              <input
+                name="email"
+                type="email"
+                placeholder="Email Address"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+              />
+            </div>
+
+            <div className="relative">
+              <UserTypeIcon icon={<Lock size={18} />} />
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={handleChange}
+                required
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+              />
+            </div>
+
+            <div className="relative">
+              <UserTypeIcon icon={<Briefcase size={18} />} />
+              <input
+                name="profession"
+                placeholder="Profession (e.g. Developer)"
+                value={form.profession}
+                onChange={handleChange}
+                className="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full flex justify-center items-center gap-2 py-3 mt-4 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-200 transition-all active:scale-[0.98]"
+            >
+              Sign Up <ChevronRight size={18} />
+            </button>
+          </form>
+
+          <p className="mt-8 text-center text-sm text-slate-500">
+            Already have an account?{' '}
+            <Link className="text-indigo-600 font-bold hover:underline" to="/login">
+              Log in
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
 };
+
+
+const UserTypeIcon = ({ icon }) => (
+  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+    {icon}
+  </div>
+);
 
 export default Register;
