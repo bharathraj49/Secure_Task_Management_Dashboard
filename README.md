@@ -1,33 +1,37 @@
+# 🚀 Taskly
 
 Taskly is a full-stack task management application built with the MERN stack.  
 It provides secure authentication and an intuitive dashboard for managing tasks efficiently.
 
+---
 
-```
-Features:
-```
-1)User Authentication (Login / Register) 
-2)Task Creation & Management
-3)Modern Dashboard UI
-4)Search Functionality
-5)Protected Routes with JWT Authentication
+## Features
 
+- User Authentication (Login / Register)
+- Task Creation & Management
+- Modern Dashboard UI
+- Search Functionality
+- Protected Routes with JWT Authentication
 
+---
 
-**Tech Stack:**
+## Tech Stack
 
-###Frontend
+### Frontend
 - React.js (Vite)
 - Tailwind CSS
 
-###Backend
+### Backend
 - Node.js
 - Express.js
 - MongoDB
 - JWT Authentication
 
-## 📁 Project Structure
+---
 
+## Project Structure
+
+```
 SecureTaskManagement/
 ├── Backend/
 │   ├── controller/
@@ -73,39 +77,58 @@ SecureTaskManagement/
         └── index.css
 ```
 
+---
 
-##  Architecture Diagram
+## 🏗️ Architecture Diagram
 
 <p align="center">
   <img src="./assets/image.png" width="800"/>
 </p>
 
+---
 
-## Installation
+## ⚙️ Installation
 
 ### Clone Repository
+
+```
 git clone https://github.com/bharathraj49/Secure_Task_Management_Dashboard.git
-cd SECURETASKMANAGEMENT
+cd Secure_Task_Management_Dashboard
+```
 
 ### Backend Setup
+
+```
 cd Backend
 npm install
 npm start
+```
 
 ### Frontend Setup
+
+```bash
 cd Frontend
 cd src
 npm install
 npm run dev
+```
 
-## Environment Variables
+---
 
-Create a `.env` file inside Backend:
+## 🔐 Environment Variables
 
+Create a `.env` file inside the `Backend` folder:
+
+```
 MONGO_URI=mongodb+srv://bharath:Bharath@cluster0.1gkorum.mongodb.net/SecureTaskManagementDashboard
 PORT=5010
 SECRET_KEY=your_secret_key
+```
 
+---
 
-Developed By
-Bharath Raj T
+## Developed By
+
+**Bharath Raj T**
+
+---
