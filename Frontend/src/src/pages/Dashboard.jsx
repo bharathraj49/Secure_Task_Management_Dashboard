@@ -20,7 +20,7 @@ const Dashboard = () => {
  
   const [tasks, setTasks] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [filter, setFilter] = useState("all"); // 'all', 'pending', 'in-progress', 'completed'
+  const [filter, setFilter] = useState("all"); 
   const [showModal, setShowModal] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
@@ -71,7 +71,7 @@ const Dashboard = () => {
   return (
     <div className="flex min-h-screen bg-slate-50 font-sans text-slate-900">
       
-      {/* SIDEBAR NAVIGATION */}
+      
       <aside className="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col p-6 fixed h-full shadow-sm">
         <div className="flex items-center gap-2 mb-10 text-indigo-600 font-bold text-xl uppercase tracking-tighter">
           <LayoutDashboard size={24} strokeWidth={3} /> Taskly
