@@ -126,6 +126,16 @@ SECRET_KEY=your_secret_key
 ```
 
 ---
+## Demo Picture
+<p align="center">
+  <img src="./assets/Taskly1.png" width="800"/>
+</p>
+<p align="center">
+  <img src="./assets/taskly2.png" width="800"/>
+</p>
+<p align="center">
+  <img src="./assets/Taskly3.png" width="800"/>
+</p>
 
 ## Developed By
 
